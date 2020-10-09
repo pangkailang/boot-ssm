@@ -1,0 +1,16 @@
+
+server:
+  port: 8080
+  servlet:
+    context-path: /boot-ssm
+#数据库配置
+spring:
+  datasource:
+    username: root
+    password: Yangsen1994!@#$
+    url: jdbc:mysql://192.168.232.139:3306/boot-ssm?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#mybaties相关配置
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.pkl.boot.mapper
