@@ -6,12 +6,14 @@ import com.pkl.boot.service.IHelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class HelloServiceImpl implements IHelloService {
     @Autowired
     private HelloMapper helloMapper;
     @Override
-    public User getUser(String id) {
+    public List<User> getUser(String id) {
         return helloMapper.getUser(id);
     }
 }

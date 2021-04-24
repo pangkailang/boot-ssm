@@ -7,6 +7,19 @@
 <mapper namespace="com.pkl.boot.mapper.HelloMapper">
     <!-- 通过id查询一个用户 -->
     <select id="getUser" parameterType="String" resultType="com.pkl.boot.entity.User">
-		select * from user where id=#{id};
+-- 		select id,name from (
+-- 		select id,name from (
+-- 		select id,name from (
+-- 		select id,name from user_pkl)user_pkl_test where id=#{id}
+-- 		union
+-- 	select id,name from (
+-- 		select up.id,up.name from user_pkl up,dept_pkl dp where up.id=dp.id)user_pkl_test where id=#{id}
+-- 		union
+-- 		select id,name from (
+-- 		select up.id,up.name from user_pkl up left join
+-- 		dept_pkl dp on up.id=dp.id
+-- 		)user_pkl_test where id=#{id})base)tmp
+		select up.id,up.name from user_pkl up left join
+		dept_pkl dp on up.id>dp.id
 	</select>
 </mapper>
